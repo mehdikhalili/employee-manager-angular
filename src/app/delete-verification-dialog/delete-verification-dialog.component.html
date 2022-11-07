@@ -1,0 +1,15 @@
+<mat-toolbar class="mb-4">
+    <h4 mat-dialog-title>Delete Employee</h4>
+    <span class="flex-spacer"></span>
+    <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+
+<mat-dialog-content>
+    <p class="ml-3">Are you sure you want to delete employee {{ employee.name }} ?</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <span class="flex-spacer"></span>
+    <button mat-raised-button mat-dialog-close>Close</button>
+    <button mat-raised-button color="warn" class="mat-raised-button" (click)="deleteEmployee()">DELETE</button>
+</mat-dialog-actions>

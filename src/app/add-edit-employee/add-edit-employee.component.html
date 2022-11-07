@@ -1,0 +1,38 @@
+<mat-toolbar class="mb-4">
+    {{ getFormTitle() }}
+    <span class="flex-spacer"></span>
+    <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+
+<div fxFlex fxFlexOffset="20px" class="form-size">
+    <form novalidate [formGroup]="employeeForm" #eForm="ngForm" (ngSubmit)="onSubmit()">
+        <mat-dialog-content class="mx-auto">
+            <mat-form-field class="full-width">
+                <mat-label>Full Name</mat-label>
+                <input matInput formControlName="name" placeholder="Full Name" type="text" required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" placeholder="Email" type="email" required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Phone</mat-label>
+                <input matInput formControlName="phone" placeholder="Phone" type="tel" required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Job title</mat-label>
+                <input matInput formControlName="jobTitle" placeholder="Job title" type="text" required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Image URL</mat-label>
+                <input matInput formControlName="imageUrl" placeholder="Image URL" type="text" required>
+            </mat-form-field>
+        </mat-dialog-content>
+        <mat-dialog-actions>
+            <span class="flex-spacer"></span>
+            <button mat-raised-button mat-dialog-close>Cancel</button>
+            <button type="submit" [disabled]="eForm.form.invalid"
+                mat-raised-button color="primary" class="text-floral-white">Save</button>
+        </mat-dialog-actions>
+    </form>
+</div>
